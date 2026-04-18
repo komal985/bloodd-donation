@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donation App</title>
+    <style>
+        :root {
+            --bg: #f6f8fb;
+            --surface: #ffffff;
+            --primary: #c62828;
+            --primary-dark: #a71f1f;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --border: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        .header {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 16px;
+        }
+
+        .title {
+            margin: 0 0 10px;
+            font-size: 1.25rem;
+        }
+
+        .nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            padding: 8px 10px;
+            font-size: 0.95rem;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 12px;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        label {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        button {
+            width: 100%;
+            border: 0;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            background: var(--primary);
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: var(--primary-dark);
+        }
+
+        .meta {
+            color: var(--muted);
+            margin: 6px 0 0;
+            font-size: 0.9rem;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 24px;
+            }
+
+            .title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <h1 class="title">Blood Donation App</h1>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/register">Register Donor</a>
+                <a href="/request">Request Blood</a>
+            </nav>
+        </header>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

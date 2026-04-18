@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card">
+    <h2>Matches for {{ req.patient_name }}</h2>
+    {% if matches %}
+        {% for m in matches %}
+            <article class="card">
+                <strong>{{ m.name }}</strong>
+                <p class="meta">{{ m.blood_group }} | {{ m.city }}</p>
+                <p class="meta">Phone: {{ m.phone }}</p>
+            </article>
+        {% endfor %}
+    {% else %}
+        <p class="meta">No matches found.</p>
+    {% endif %}
+</section>
+{% endblock %}

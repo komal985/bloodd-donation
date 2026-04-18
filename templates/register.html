@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card">
+    <h2>Register as Donor</h2>
+    <form method="post">
+        <div class="form-field">
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" required>
+        </div>
+        <div class="form-field">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" name="phone" required>
+        </div>
+        <div class="form-field">
+            <label for="blood_group">Blood Group</label>
+            <input id="blood_group" type="text" name="blood_group" required>
+        </div>
+        <div class="form-field">
+            <label for="city">City</label>
+            <input id="city" type="text" name="city" required>
+        </div>
+        <div class="form-field">
+            <label for="pincode">Pincode</label>
+            <input id="pincode" type="text" name="pincode" inputmode="numeric">
+        </div>
+        <div class="form-field">
+            <label for="last_donation_date">Last Donation Date</label>
+            <input id="last_donation_date" type="date" name="last_donation_date">
+        </div>
+        <button type="submit">Register</button>
+    </form>
+</section>
+{% endblock %}

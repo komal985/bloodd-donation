@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card">
+    <h2>Request Blood</h2>
+    <form method="post">
+        <div class="form-field">
+            <label for="patient_name">Patient Name</label>
+            <input id="patient_name" type="text" name="patient_name" required>
+        </div>
+        <div class="form-field">
+            <label for="required_blood_group">Required Blood Group</label>
+            <input id="required_blood_group" type="text" name="required_blood_group" required>
+        </div>
+        <div class="form-field">
+            <label for="city">City</label>
+            <input id="city" type="text" name="city" required>
+        </div>
+        <div class="form-field">
+            <label for="pincode">Pincode</label>
+            <input id="pincode" type="text" name="pincode" inputmode="numeric">
+        </div>
+        <div class="form-field">
+            <label for="urgency">Urgency</label>
+            <input id="urgency" type="text" name="urgency" placeholder="High / Medium / Low">
+        </div>
+        <button type="submit">Submit Request</button>
+    </form>
+</section>
+{% endblock %}

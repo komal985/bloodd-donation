@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="card">
+    <h2>Donors</h2>
+    {% if donors %}
+        {% for d in donors %}
+            <article class="card">
+                <strong>{{ d.name }}</strong>
+                <p class="meta">{{ d.blood_group }} | {{ d.city }}</p>
+            </article>
+        {% endfor %}
+    {% else %}
+        <p class="meta">No donors registered yet.</p>
+    {% endif %}
+</section>
+
+<section class="card">
+    <h2>Blood Requests</h2>
+    {% if requests %}
+        {% for r in requests %}
+            <article class="card">
+                <strong>{{ r.patient_name }}</strong>
+                <p class="meta">Needs {{ r.required_blood_group }} in {{ r.city }}</p>
+                <a href="/matches/{{ r.id }}">Find Donors</a>
+            </article>
+        {% endfor %}
+    {% else %}
+        <p class="meta">No active blood requests.</p>
+    {% endif %}
+</section>
+{% endblock %}
