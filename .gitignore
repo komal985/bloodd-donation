@@ -14,3 +14,7 @@ flutter_app/.idea/
 # OS / editor
 .DS_Store
 Thumbs.db
+
+key.properties
+*.jks
+*.keystore
