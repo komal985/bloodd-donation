@@ -1,0 +1,15 @@
+.git/
+.gitignore
+.vercel/
+.dart_tool/
+flutter_app/
+__pycache__/
+*.pyc
+*.pyo
+*.db
+venv/
+.venv/
+node_modules/
+dist/
+build/
+README.md

@@ -1,8 +1,12 @@
+import os
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from models import db, Donor, BloodRequest
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blood.db'
+
+# Vercel serverless functions can write only to /tmp.
+default_db_uri = 'sqlite:////tmp/blood.db' if os.environ.get('VERCEL') else 'sqlite:///blood.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', default_db_uri)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
